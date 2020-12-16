@@ -1,0 +1,11 @@
+após criar o composer.json, defino a psr4
+{
+    "autoload" : {
+        "psr-4" : {
+            "App\\" : "App/"
+        }
+    }
+}
+
+digito o seguinte comando para atualizar o composer.json e baixar a pasta vendor
+composer dump-autoload
