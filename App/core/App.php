@@ -13,20 +13,24 @@ class App{
         print_r ($url = $this->parseURL());
         echo "</pre>";
 
-        if(file_exists('../App/cntrollers/'.$url[1].'.php')):
-            $this->controller = $url[1];
-            unset($url[1]);
-        endif;
+        if(isset($url[2])){
+            //quando o site estiver no servidor remoto os indices diminuem -1
+            if(file_exists('../App/controllers/'.$url[2].'.php')):
+                $this->controller = $url[2];
+                unset($url[2]);
+            endif;
+        }
+  
 
         require_once '../App/controllers/'.$this->controller.'.php';
 
         $this->controller = new $this->controller;
 
-        if(isset($url[2])):
-            if(method_exists($this->controller, $url[2])):
+        if(isset($url[3])):
+            if(method_exists($this->controller, $url[3])):
                   $this->method = $url[3];
                   unset($url[2]);
-                  unset($url[0]);
+                  unset($url[1]);
             endif;
         endif;
 

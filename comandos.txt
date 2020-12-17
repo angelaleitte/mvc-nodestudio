@@ -9,3 +9,5 @@ após criar o composer.json, defino a psr4
 
 digito o seguinte comando para atualizar o composer.json e baixar a pasta vendor
 composer dump-autoload
+
+Aula para alteração do servidor local: VIRTUAL HOST E HTACCESS
